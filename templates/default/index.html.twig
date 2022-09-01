@@ -3,5 +3,158 @@
 {% block title %}{{ parent() }} - Portfolio{% endblock %}
 
 {% block body %}
-<h1>Hello World!</h1>
+<section id="top" class="bg-primary d-flex justify-content-center align-items-center">
+    <div>
+        <h2 class="text-white text-center display-4">
+            Henrik Abel
+        </h2>
+        <p class="text-white text-center lead">&lt;Software Developer&gt;</p>
+
+        <div class="d-flex justify-content-center">
+            <a href="#" class="social-icon">
+                <i class="bi bi-twitter text-white"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="bi bi-github text-white"></i>
+            </a>
+        </div>
+    </div>
+</section>
+<section id="projects" class="py-5">
+    <div class="container pt-5">
+        <h2 class="display-5 text-center">Projects</h2>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="row gy-3">
+                    <div class="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 1</h5>
+                                <p class="card-text">
+                                    Some random card text
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row text-center">
+                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                        <span>Swift</span>
+                                    </div>
+                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                        <span>
+                                            <i class="bi bi-star-fill"></i>
+                                            5
+                                        </span>
+                                    </div>
+                                    <div class="col-4 p-2">
+                                        <span>
+                                            <a href="#" target="_blank" class="text-dark">
+                                                <i class="bi bi-github"></i>
+                                                <span class="d-none d-lg-inline">view code</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 1</h5>
+                                <p class="card-text">
+                                    Some random card text
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row text-center">
+                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                        <span>Swift</span>
+                                    </div>
+                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                        <span>
+                                            <i class="bi bi-star-fill"></i>
+                                            5
+                                        </span>
+                                    </div>
+                                    <div class="col-4 p-2">
+                                        <span>
+                                            <a href="#" target="_blank" class="text-dark">
+                                                <i class="bi bi-github"></i>
+                                                <span class="d-none d-lg-inline">view code</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 1</h5>
+                                <p class="card-text">
+                                    Some random card text
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row text-center">
+                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                        <span>Swift</span>
+                                    </div>
+                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                        <span>
+                                            <i class="bi bi-star-fill"></i>
+                                            5
+                                        </span>
+                                    </div>
+                                    <div class="col-4 p-2">
+                                        <span>
+                                            <a href="#" target="_blank" class="text-dark">
+                                                <i class="bi bi-github"></i>
+                                                <span class="d-none d-lg-inline">view code</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about" class="bg-primary py-5">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12 col-md-5">
+                <h2 class="display-5 text-white">About me</h2>
+                <p class="lead text-white">
+                I love to design and build software.
+                I enjoy trying new technologies and I am currently teaching myself Swift/SwiftUI.
+                </p>
+            </div>
+
+            <div class="col-12 col-md-6 offset-md-1 mt-5 mt-md-0">
+                <h2 class="display-5 text-white">Toolkit</h2>
+                <div class="d-flex justify-content-start text-white">
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                    </ul>
+
+                    <ul>
+                        <li>PHP</li>
+                        <li>Symfony</li>
+                        <li>PostgreSQL/MySQL</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

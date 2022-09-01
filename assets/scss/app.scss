@@ -1,3 +1,70 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$primary: rgb(72, 95, 199);
+
+$navbar-dark-color: #fff;
+$navbar-dark-toggler-border-color: $navbar-dark-color;
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+:root {
+    --bs-body-font-family: 'Poppins', sans-serif;
+}
+
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+body {
+    padding-top: 3.25rem;
+
+    section {
+        min-height: 100vh;
+        // padding: 9rem 4.5rem;
+    }
+
+    .navbar {
+        .navbar-brand {
+            font-size: 2rem;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            letter-spacing: 1px;
+        }
+    }
+
+    #top {
+        p {
+            letter-spacing: 1px;
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            margin: 0 0.8rem;
+        }
+    }
+
+    #projects {
+        .card {
+            font-size: 1.25rem;
+            min-height: 250px !important;
+
+            a {
+                font-size: 1rem;
+                text-decoration: none;
+
+                i {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .card-footer {
+                background-color: #fff;
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+        }
+    }
+}
