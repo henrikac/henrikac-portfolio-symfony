@@ -14,7 +14,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 #[AsCommand(
-    name: 'portfolio:fetch:repositories',
+    name: 'app:fetch:repositories',
     description: 'Fetches repositories from GitHub',
 )]
 final class FetchGitHubRepositoriesCommand extends Command
