@@ -10,10 +10,15 @@ Run `cp .env .env.local` and update `.env.local`.
 
 #### Client
 ```
+$ npm install
 $ npm run build
 ```
 
 #### Server
+```
+$ composer install
+```
+
 Make sure the database is created and running before running the following command
 
 ```
