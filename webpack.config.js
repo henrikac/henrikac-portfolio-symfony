@@ -24,6 +24,7 @@ Encore
         './assets/scss/app.scss',
         './assets/app.js'
     ])
+    .addEntry('toggle-repository-visibility', './assets/js/toggle-repository-visibility.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

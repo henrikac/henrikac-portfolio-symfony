@@ -27,99 +27,43 @@
         <div class="row mt-5">
             <div class="col-12">
                 <div class="row gy-3">
-                    <div class="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h5 class="card-title">Card 1</h5>
-                                <p class="card-text">
-                                    Some random card text
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row text-center">
-                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                        <span>Swift</span>
-                                    </div>
-                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                        <span>
-                                            <i class="bi bi-star-fill"></i>
-                                            5
-                                        </span>
-                                    </div>
-                                    <div class="col-4 p-2">
-                                        <span>
-                                            <a href="#" target="_blank" class="text-dark">
-                                                <i class="bi bi-github"></i>
-                                                <span class="d-none d-lg-inline">view code</span>
-                                            </a>
-                                        </span>
+                    {% for repository in repositories %}
+                        <div class="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">{{ repository.title }}</h5>
+                                    <p class="card-text">
+                                        {% if repository.description is not null %}
+                                            {{ repository.description }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row text-center">
+                                        <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                            {% if repository.language is not null %}
+                                                <span>{{ repository.language }}</span>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
+                                            <span>
+                                                <i class="bi bi-star-fill"></i>
+                                                {{ repository.stars }}
+                                            </span>
+                                        </div>
+                                        <div class="col-4 p-2">
+                                            <span>
+                                                <a href="{{ repository.url }}" target="_blank" class="text-dark">
+                                                    <i class="bi bi-github"></i>
+                                                    <span class="d-none d-lg-inline">view code</span>
+                                                </a>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h5 class="card-title">Card 1</h5>
-                                <p class="card-text">
-                                    Some random card text
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row text-center">
-                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                        <span>Swift</span>
-                                    </div>
-                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                        <span>
-                                            <i class="bi bi-star-fill"></i>
-                                            5
-                                        </span>
-                                    </div>
-                                    <div class="col-4 p-2">
-                                        <span>
-                                            <a href="#" target="_blank" class="text-dark">
-                                                <i class="bi bi-github"></i>
-                                                <span class="d-none d-lg-inline">view code</span>
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h5 class="card-title">Card 1</h5>
-                                <p class="card-text">
-                                    Some random card text
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row text-center">
-                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                        <span>Swift</span>
-                                    </div>
-                                    <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                        <span>
-                                            <i class="bi bi-star-fill"></i>
-                                            5
-                                        </span>
-                                    </div>
-                                    <div class="col-4 p-2">
-                                        <span>
-                                            <a href="#" target="_blank" class="text-dark">
-                                                <i class="bi bi-github"></i>
-                                                <span class="d-none d-lg-inline">view code</span>
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

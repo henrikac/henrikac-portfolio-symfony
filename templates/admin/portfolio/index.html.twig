@@ -1,5 +1,10 @@
 {% extends "admin/base.html.twig" %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('toggle-repository-visibility') }}
+{% endblock %}
+
 {% block body %}
 <div class="container">
     <h2 class="display-6">Repositories</h2>
@@ -19,19 +24,15 @@
                     <th scope="row">{{ repository.title }}</th>
                     <td>{{ repository.language }}</td>
                     <td>{{ repository.stars }}</td>
-                    {% if repository.isPublic %}
-                        <td>
-                            <button type="button" class="btn btn-sm btn-danger">
-                                Hide
-                            </button>
-                        </td>
-                    {% else %}
-                        <td>
-                            <button type="button" class="btn btn-sm btn-success">
-                                Show
-                            </button>
-                        </td>
-                    {% endif %}
+                    <td> 
+                        <button
+                            type="button"
+                            class="btn btn-sm {% if repository.isPublic %}btn-danger{% else %}btn-success{% endif %} toggle-repository-visibility-btn"
+                            data-repo-id="{{ repository.id }}"
+                        >
+                            {% if repository.isPublic %}Hide{% else %}Show{% endif %}
+                        </button>
+                    </td>
                 </tr>
             {% endfor %}
         <tbody>
