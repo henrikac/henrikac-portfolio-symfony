@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Commands;
+namespace App\Command;
 
 use App\Entity\GitHubRepo;
 use App\Repository\GitHubRepoRepository;
