@@ -11,9 +11,20 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        admin:
+            pattern: ^/admin
+            provider: app_user_provider
+            custom_authenticator: App\Security\AdminLoginAuthenticator
+            entry_point: App\Security\AdminLoginAuthenticator
+            form_login:
+                enable_csrf: true
+                login_path: admin_auth_login
+                check_path: admin_auth_login
+            logout:
+                path: admin_auth_logout
+                target: index
         main:
             lazy: true
-            provider: app_user_provider
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
