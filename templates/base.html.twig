@@ -38,6 +38,19 @@
             {% block body %}{% endblock %}
         </main>
 
+        <footer>
+            <div class="text-center p-3">
+                <a href="https://twitter.com/henrikabel" target="_blank">
+                    <i class="bi bi-twitter circle-icon"></i>
+                </a>
+
+                <a href="https://github.com/henrikac" target="_blank">
+                    <i class="bi bi-github circle-icon"></i>
+                </a>
+            </div>
+            <p class="text-center text-primary">&copy; {{ 'now' | date('Y') }} Henrik A. Christensen</p>
+        </footer>
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

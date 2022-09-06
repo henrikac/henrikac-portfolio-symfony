@@ -24,6 +24,23 @@ body {
         // padding: 9rem 4.5rem;
     }
 
+    footer {
+        a {
+            color: #fff;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        .circle-icon {
+            font-size: 1.75rem;
+            background-color: #fff;
+            color: $primary;
+            margin: 0 0.8rem;
+        }
+    }
+
     .navbar {
         .navbar-brand {
             font-size: 2rem;
