@@ -14,6 +14,6 @@ final class AdminController extends AbstractController
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(): Response
     {
-        return $this->redirectToRoute('admin_portfolio_list');
+        return $this->redirectToRoute('portfolio_list');
     }
 }
