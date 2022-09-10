@@ -37,7 +37,15 @@ To fetch and save your GitHub repository data to your database run the following
 $ ./bin/console app:fetch:repositories
 ```
 
-*Tip:* Have a cron job run `php bin/console app:fetch:repositories` e.g. every 5 minutes to keep the data shown on the portfolio data up-to-date. 
+*Tip:* Have a cron job run `php bin/console app:fetch:repositories` e.g. every 5 minutes to keep the data shown on the portfolio data up-to-date.  
+
+To set up a crob job that runs every 5 minutes simply run `crontab -e` and then add a line at the bottom of the file that opens
+
+```
+*/5 * * * * /usr/bin/php /path/to/your/project/bin/console app:fetch:repositories
+```
+
+This cron job should now run every 5 minutes.
 
 #### Create superuser
 To create a superuser that is able to log in to the admin section simply run
