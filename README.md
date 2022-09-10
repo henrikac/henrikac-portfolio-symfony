@@ -39,7 +39,7 @@ $ ./bin/console app:fetch:repositories
 
 *Tip:* Have a cron job run `php bin/console app:fetch:repositories` e.g. every 5 minutes to keep the data shown on the portfolio data up-to-date.  
 
-To set up a crob job that runs every 5 minutes simply run `crontab -e` and then add a line at the bottom of the file that opens
+To set up a cron job that runs every 5 minutes simply run `crontab -e` and then add a line at the bottom of the file that opens
 
 ```
 */5 * * * * /usr/bin/php /path/to/your/project/bin/console app:fetch:repositories
