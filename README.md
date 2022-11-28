@@ -2,7 +2,7 @@
 
 ## Requirements
 - [PHP 8.1+](https://www.php.net/)
-- [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/) and [pnpm](https://pnpm.io)
 - [Docker](https://www.docker.com/) *(or PostgreSQL)*
 
 ## Setup
@@ -10,8 +10,8 @@ Run `cp .env .env.local` and update `.env.local`.
 
 #### Client
 ```
-$ npm install
-$ npm run build
+$ pnpm install
+$ pnpm run build
 ```
 
 #### Server
