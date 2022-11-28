@@ -11,7 +11,7 @@ Run `cp .env .env.local` and update `.env.local`.
 #### Client
 ```
 $ pnpm install
-$ pnpm run build
+$ pnpm build
 ```
 
 #### Server
