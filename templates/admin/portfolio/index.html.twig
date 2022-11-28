@@ -6,41 +6,42 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <h2 class="display-6">Repositories</h2>
+    <div class="px-4">
+        <h2 class="text-white text-3xl mt-10">Repositories</h2>
 
-    <p class="text-end">Total: {{ pagination.getTotalItemCount }}</p>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">{{ knp_pagination_sortable(pagination, 'Title', 'r.title') }}</th>
-                <th scope="col">{{ knp_pagination_sortable(pagination, 'Language', 'r.language') }}</th>
-                <th scope="col">{{ knp_pagination_sortable(pagination, 'Stars', 'r.stars') }}</th>
-                <th scope="col">{{ knp_pagination_sortable(pagination, 'Public', 'r.isPublic') }}</th>
-            </tr>
-        </thead>
-            {% for repository in pagination %}
-                <tr>
-                    <th scope="row">{{ repository.title }}</th>
-                    <td>{{ repository.language }}</td>
-                    <td>{{ repository.stars }}</td>
-                    <td> 
-                        <button
-                            type="button"
-                            class="btn btn-sm {% if repository.isPublic %}btn-danger{% else %}btn-success{% endif %} toggle-repository-visibility-btn"
-                            data-repo-id="{{ repository.id }}"
-                        >
-                            {% if repository.isPublic %}Hide{% else %}Show{% endif %}
-                        </button>
-                    </td>
+        <p class="text-end text-white font-semibold my-10">Total: {{ pagination.getTotalItemCount }}</p>
+
+        <table class="min-w-full table-auto text-white mb-10">
+            <thead>
+                <tr class="text-white text-left text-lg border-b">
+                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Title', 'r.title') }}</th>
+                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Language', 'r.language') }}</th>
+                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Stars', 'r.stars') }}</th>
+                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Public', 'r.isPublic') }}</th>
                 </tr>
-            {% endfor %}
-        <tbody>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for repository in pagination %}
+                    <tr class="text-left border-b">
+                        <th scope="row" class="py-4">{{ repository.title }}</th>
+                        <td class="py-4">{{ repository.language }}</td>
+                        <td class="py-4">{{ repository.stars }}</td>
+                        <td class="py-4"> 
+                            <button
+                                type="button"
+                                class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline {% if repository.isPublic %}bg-red-500 hover:bg-red-700{% else %}bg-green-500 hover:bg-green-700{% endif %} toggle-repository-visibility-btn"
+                                data-repo-id="{{ repository.id }}"
+                            >
+                                {% if repository.isPublic %}Hide{% else %}Show{% endif %}
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-    <div class="d-flex justify-content-center">
-        {{ knp_pagination_render(pagination) }}
+        <div class="flex justify-center mb-10">
+            {{ knp_pagination_render(pagination) }}
+        </div>
     </div>
-</div>
 {% endblock %}

@@ -10,30 +10,22 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        <nav class="navbar navbar-dark navbar-expand-md bg-primary fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="{{ path('admin_index') }}">HenrikAC Admin</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <body class="bg-slate-900 font-mono">
+        <nav>
+            <div class="container mx-auto px-4 py-6 flex items-center justify-center md:justify-between">
+                <a class="text-3xl text-white font-semibold" href="{{ path('admin_index') }}">HenrikAC Admin</a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <div class="hidden md:flex md:justify-end md:items-center" id="navbarSupportedContent">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ path('portfolio_list') }}">Portfolio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ path('admin_auth_logout') }}">Log ud</a>
-                            </li>
+                            <a class="text-white mr-6 hover:underline" href="{{ path('portfolio_list') }}">Portfolio</a>
+                            <a class="text-white hover:underline" href="{{ path('admin_auth_logout') }}">Log ud</a>
                         {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <main class="pt-5">
+        <main class="container mx-auto">
             {% block body %}{% endblock %}
         </main>
 

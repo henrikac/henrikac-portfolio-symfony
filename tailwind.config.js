@@ -5,7 +5,11 @@ module.exports = {
     "./templates/**/*.html.twig",
   ],
   theme: {
-    extend: {},
+    extend: {
+      minHeight: {
+        '250': '250px',
+      },
+    },
   },
   plugins: [],
 }

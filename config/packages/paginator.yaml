@@ -1,6 +1,4 @@
 knp_paginator:
     page_range: 3
     template:
-        pagination: '@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig'
-        sortable: '@KnpPaginator/Pagination/bootstrap_v5_bi_sortable_link.html.twig'
-        filtration: '@KnpPaginator/Pagination/bootstrap_v5_filtration.html.twig'
+        pagination: '@KnpPaginator/Pagination/tailwindcss_pagination.html.twig'

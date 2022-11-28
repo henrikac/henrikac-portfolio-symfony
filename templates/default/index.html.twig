@@ -3,100 +3,89 @@
 {% block title %}{{ parent() }} - Portfolio{% endblock %}
 
 {% block body %}
-<section id="top" class="bg-primary d-flex justify-content-center align-items-center">
+<section id="top">
     <div>
-        <h2 class="text-white text-center display-4">
-            Henrik Abel
-        </h2>
-        <p class="text-white text-center lead">&lt;Software Developer&gt;</p>
+        <h2 class="text-2xl text-white text-center py-5">&lt;Software Developer&gt;</h2>
 
-        <div class="d-flex justify-content-center">
-            <a href="https://twitter.com/henrikabel" class="social-icon" target="_blank">
-                <i class="bi bi-twitter text-white"></i>
+        <div class="flex justify-center">
+            <a class="mr-3" href="https://twitter.com/henrikabel" class="social-icon" target="_blank">
+                <i class="bi bi-twitter text-white text-3xl"></i>
             </a>
-            <a href="https://github.com/henrikac" class="social-icon" target="_blank">
-                <i class="bi bi-github text-white"></i>
+            <a class="ml-3" href="https://github.com/henrikac" class="social-icon" target="_blank">
+                <i class="bi bi-github text-white text-3xl"></i>
             </a>
         </div>
     </div>
 </section>
-<section id="projects" class="py-5">
-    <div class="container pt-5">
-        <h2 class="display-5 text-center">Projects</h2>
 
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="row gy-3">
-                    {% for repository in repositories %}
-                        <div class="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-0">
-                            <div class="card shadow">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">{{ repository.title }}</h5>
-                                    <p class="card-text">
-                                        {% if repository.description is not null %}
-                                            {{ repository.description }}
-                                        {% endif %}
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="row text-center">
-                                        <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                            {% if repository.language is not null %}
-                                                <span>{{ repository.language }}</span>
-                                            {% endif %}
-                                        </div>
-                                        <div class="col-4 p-2 border-end d-flex align-items-center justify-content-center">
-                                            <span>
-                                                <i class="bi bi-star-fill"></i>
-                                                {{ repository.stars }}
-                                            </span>
-                                        </div>
-                                        <div class="col-4 p-2">
-                                            <span>
-                                                <a href="{{ repository.url }}" target="_blank" class="text-dark">
-                                                    <i class="bi bi-github"></i>
-                                                    <span class="d-none d-lg-inline">view code</span>
-                                                </a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
+<section id="projects" class="py-5 mt-10">
+    <h2 class="text-2xl text-white text-center">Projects</h2>
+
+    <div class="mt-5 md:columns-2">
+        {% for repository in repositories %}
+            <div class="bg-slate-700 min-h-250 pt-4 px-4 mt-4 mx-4 rounded shadow flex flex-col justify-between">
+                <div>
+                    <h5 class="text-white text-xl pb-2">{{ repository.title }}</h5>
+                    <p class="text-white">
+                        {% if repository.description is not null %}
+                            {{ repository.description }}
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="flex pb-2">
+                    <div class="flex-1 text-center">
+                        {% if repository.language is not null %}
+                            <span class="text-lg text-white">{{ repository.language }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="flex-1 text-center">
+                        <span class="text-lg text-white">
+                            <i class="bi bi-star-fill"></i>
+                            {{ repository.stars }}
+                        </span>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <span class="text-lg text-white">
+                            <a href="{{ repository.url }}" target="_blank">
+                                <i class="bi bi-github text-2xl"></i>
+                                <span class="hidden lg:inline-block">view code</span>
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
-<section id="about" class="bg-primary py-5">
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col-12 col-md-5">
-                <h2 class="display-5 text-white">About me</h2>
-                <p class="lead text-white">
-                I love to design and build software.
-                I enjoy trying new technologies and I am currently teaching myself Swift/SwiftUI.
-                </p>
-            </div>
 
-            <div class="col-12 col-md-6 offset-md-1 mt-5 mt-md-0">
-                <h2 class="display-5 text-white">Toolkit</h2>
-                <div class="d-flex justify-content-start text-white">
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Bootstrap</li>
-                    </ul>
+<section id="about" class="mb-20">
+    <div class="md:columns-2">
+        <div class="mt-3 md:break-after-column">
+            <h2 class="text-2xl text-white text-center mb-3">About me</h2>
+            <p class="text-white px-4 pt-6">
+            I love to design and build software.
+            I enjoy trying new technologies and I am currently teaching myself Swift/SwiftUI.
+            </p>
+        </div>
 
-                    <ul>
-                        <li>PHP</li>
-                        <li>Symfony</li>
-                        <li>PostgreSQL/MySQL</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
+        <div class="mt-10 md:mt-3">
+            <h2 class="text-2xl text-white text-center mb-3">Toolkit</h2>
+            <div class="columns-2 px-4 pt-6">
+                <ul class="text-white text-center">
+                    <li>HTML / CSS</li>
+                    <li>JavaScript</li>
+                    <li>Bootstrap</li>
+                    <li>Tailwind</li>
+                    <li>SwiftUI</li>
+                </ul>
+
+                <ul class="text-white text-center">
+                    <li>PHP</li>
+                    <li>Symfony</li>
+                    <li>PostgreSQL/MySQL</li>
+                    <li>Git</li>
+                    <li>Swift</li>
+                </ul>
             </div>
         </div>
     </div>

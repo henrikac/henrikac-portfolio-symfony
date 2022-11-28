@@ -15,13 +15,17 @@ visibilityToggleBtns.forEach(btn => {
             return;
         }
 
-        if (btn.classList.contains('btn-danger')) {
-            btn.classList.remove('btn-danger');
-            btn.classList.add('btn-success');
+        if (btn.classList.contains('bg-red-500')) {
+            btn.classList.remove('bg-red-500');
+            btn.classList.remove('hover:bg-red-700');
+            btn.classList.add('bg-green-500');
+            btn.classList.add('hover:bg-green-700')
             btn.innerHTML = 'Show';
-        } else if (btn.classList.contains('btn-success')) {
-            btn.classList.remove('btn-success');
-            btn.classList.add('btn-danger');
+        } else if (btn.classList.contains('bg-green-500')) {
+            btn.classList.remove('bg-green-500');
+            btn.classList.remove('hover:bg-green-700');
+            btn.classList.add('bg-red-500');
+            btn.classList.add('hover:bg-red-700');
             btn.innerHTML = 'Hide';
         }
     });
