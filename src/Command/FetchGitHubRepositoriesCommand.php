@@ -57,11 +57,24 @@ final class FetchGitHubRepositoriesCommand extends Command
         }
 
         $repositories = $this->ghr->findAll();
-
         $repositoryMap = [];
 
         foreach ($repositories as $repository) {
-            $repositoryMap[$repository->getGithubId()] = $repository;
+            $found = false;
+
+            foreach ($fetchedRepositories as $fetchedRepository) {
+                $id = $fetchedRepository['id'];
+
+                if ($repository->getGithubId() === $id) {
+                    $repositoryMap[$repository->getGithubId()] = $repository;
+                    $found = true;
+                    break;
+                }
+            }
+
+            if (!$found) {
+                $this->entityManager->remove($repository);
+            }
         }
 
         foreach ($fetchedRepositories as $fetchedRepository) {
