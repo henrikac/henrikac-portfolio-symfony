@@ -1,8 +1,7 @@
 {% extends "admin/base.html.twig" %}
 
 {% block javascripts %}
-    {{ parent() }}
-    {{ encore_entry_script_tags('toggle-repository-visibility') }}
+    <script type="module" src="{{ asset('js/toggle-repository-visibility.js') }}"></script>
 {% endblock %}
 
 {% block body %}

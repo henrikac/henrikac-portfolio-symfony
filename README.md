@@ -2,17 +2,10 @@
 
 ## Requirements
 - [PHP 8.1+](https://www.php.net/)
-- [Node.js](https://nodejs.org/en/) and [pnpm](https://pnpm.io)
 - [Docker](https://www.docker.com/) *(or PostgreSQL)*
 
 ## Setup
 Run `cp .env .env.local` and update `.env.local`.
-
-#### Client
-```
-$ pnpm install
-$ pnpm build
-```
 
 #### Server
 ```
@@ -23,6 +16,26 @@ Make sure the database is created and running before running the following comma
 
 ```
 $ ./bin/console doctrine:migrations:migrate
+```
+
+#### Assets
+This project uses Symfony AssetMapper and `symfonycasts/tailwind-bundle`.
+
+```
+$ php bin/console tailwind:build
+```
+
+For local development with automatic Tailwind rebuilds:
+
+```
+$ php bin/console tailwind:build --watch
+```
+
+For production builds:
+
+```
+$ php bin/console tailwind:build --minify
+$ php bin/console asset-map:compile
 ```
 
 ## Usage
