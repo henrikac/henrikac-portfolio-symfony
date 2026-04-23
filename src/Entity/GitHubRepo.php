@@ -16,32 +16,32 @@ class GitHubRepo
     private ?int $id = null;
 
     #[ORM\Column(length: 140)]
-    private ?string $title = null;
+    private string $title;
 
     #[ORM\Column(length: 40, nullable: true)]
     private ?string $language = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $url = null;
+    private string $url;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column]
-    private ?int $stars = null;
+    private int $stars;
 
     #[ORM\Column]
-    private ?bool $isPublic = null;
+    private bool $isPublic;
 
     #[ORM\Column]
-    private ?int $githubId = null;
+    private int $githubId;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -65,7 +65,7 @@ class GitHubRepo
         return $this;
     }
 
-    public function getUrl(): ?string
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -89,7 +89,7 @@ class GitHubRepo
         return $this;
     }
 
-    public function getStars(): ?int
+    public function getStars(): int
     {
         return $this->stars;
     }
@@ -101,7 +101,7 @@ class GitHubRepo
         return $this;
     }
 
-    public function isPublic(): ?bool
+    public function isPublic(): bool
     {
         return $this->isPublic;
     }
@@ -113,7 +113,7 @@ class GitHubRepo
         return $this;
     }
 
-    public function getGithubId(): ?int
+    public function getGithubId(): int
     {
         return $this->githubId;
     }
