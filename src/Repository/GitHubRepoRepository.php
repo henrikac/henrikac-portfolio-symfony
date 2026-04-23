@@ -10,9 +10,9 @@ use Doctrine\Persistence\ManagerRegistry;
  * @extends ServiceEntityRepository<GitHubRepo>
  *
  * @method GitHubRepo|null find($id, $lockMode = null, $lockVersion = null)
- * @method GitHubRepo|null findOneBy(array $criteria, array $orderBy = null)
+ * @method GitHubRepo|null findOneBy(array<string, mixed> $criteria, array<string, string>|null $orderBy = null)
  * @method GitHubRepo[]    findAll()
- * @method GitHubRepo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method GitHubRepo[]    findBy(array<string, mixed> $criteria, array<string, string>|null $orderBy = null, int|null $limit = null, int|null $offset = null)
  */
 class GitHubRepoRepository extends ServiceEntityRepository
 {

@@ -124,6 +124,9 @@ final class FetchGitHubRepositoriesCommand extends Command
         );
     }
 
+    /**
+     * @param array<string, list<string>> $headers
+     */
     private function getNextUrl(array $headers): ?string
     {
         if (!isset($headers['link']) || count($headers['link']) === 0) {
