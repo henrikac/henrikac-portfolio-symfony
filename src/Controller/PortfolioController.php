@@ -27,7 +27,7 @@ class PortfolioController extends AbstractController
     #[Route('', name: 'list', methods: ['GET'])]
     public function listPortfolio(Request $request): Response
     {
-        $dql = sprintf("SELECT r FROM %s r", GitHubRepo::class);
+        $dql = sprintf("SELECT r FROM %s r ORDER BY r.title ASC, r.id ASC", GitHubRepo::class);
         $query = $this->entityManager->createQuery($dql);
 
         $pagination = $this->paginator->paginate(

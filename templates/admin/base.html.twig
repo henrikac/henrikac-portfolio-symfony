@@ -3,29 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Admin | HenrikAC{% endblock %}</title>
+        <title>{% block title %}Admin | Henrik A. Christensen{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
         {% endblock %}
     </head>
-    <body class="bg-slate-900 font-mono">
-        <nav>
-            <div class="container mx-auto px-4 py-6 flex items-center justify-center md:justify-between">
-                <a class="text-3xl text-white font-semibold" href="{{ path('admin_index') }}">HenrikAC Admin</a>
+    <body class="min-h-screen bg-[#eef4f0] [font-family:'Avenir_Next',Avenir,ui-sans-serif,system-ui,sans-serif] text-[#13251f] antialiased">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <header class="border-b border-[#c8d7d0] bg-[#fbfcfa]">
+                <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
+                    <a class="text-lg font-semibold tracking-tight text-[#13251f]" href="{{ path('admin_index') }}">HenrikAC Admin</a>
 
-                <div class="hidden md:flex md:justify-end md:items-center" id="navbarSupportedContent">
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a class="text-white mr-6 hover:underline" href="{{ path('portfolio_list') }}">Portfolio</a>
-                            <a class="text-white hover:underline" href="{{ path('admin_auth_logout') }}">Log ud</a>
-                        {% endif %}
-                    </ul>
+                    <nav class="flex items-center gap-3 text-sm font-semibold">
+                        <a class="rounded-md px-3 py-2 text-[#5a6963] transition hover:bg-[#eef4f0] hover:text-[#13251f]" href="{{ path('portfolio_list') }}">Portfolio</a>
+                        <a class="rounded-md px-3 py-2 text-[#b94635] transition hover:bg-[#f3ded8]" href="{{ path('admin_auth_logout') }}">Log out</a>
+                    </nav>
                 </div>
-            </div>
-        </nav>
+            </header>
+        {% endif %}
 
-        <main class="container mx-auto">
+        <main class="mx-auto max-w-6xl px-5 py-10">
             {% block body %}{% endblock %}
         </main>
 

@@ -1,92 +1,286 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ parent() }} - Portfolio{% endblock %}
+{% block title %}{{ parent() }} - Software Developer{% endblock %}
 
 {% block body %}
-<section id="top">
-    <div>
-        <h2 class="text-2xl text-white text-center py-5">&lt;Software Developer&gt;</h2>
+<section id="top" class="border-b border-[#c8d7d0] bg-[#fbfcfa]">
+    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.15fr_0.85fr] md:items-center md:py-24">
+        <div>
+            <div class="mb-10">
+                <p class="text-sm font-semibold tracking-tight text-[#13251f]">Henrik A. Christensen</p>
+                <p class="mt-2 inline-flex items-center gap-2 rounded-full border border-[#b8d2c8] bg-[#e1efe8] px-3 py-1 text-sm font-semibold text-[#176d72]">
+                    <span class="h-2 w-2 rounded-full bg-[#d45d4a]"></span>
+                    Software developer based in Denmark
+                </p>
+            </div>
 
-        <div class="flex justify-center">
-            <a class="mr-3" href="https://twitter.com/henrikabel" class="social-icon" target="_blank">
-                <i class="bi bi-twitter text-white text-3xl"></i>
-            </a>
-            <a class="ml-3" href="https://github.com/henrikac" class="social-icon" target="_blank">
-                <i class="bi bi-github text-white text-3xl"></i>
-            </a>
+            <h1 class="max-w-4xl text-4xl font-semibold tracking-tight text-[#13251f] sm:text-5xl lg:text-6xl">
+                I build practical software that creates value for real people.
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-[#52615b]">
+                I am a pragmatic generalist working mainly with PHP, Symfony, APIs, integrations and iOS. I care about stable systems, useful workflows and learning whatever is needed to make the solution work well in practice.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+                <a class="inline-flex items-center gap-2 rounded-md bg-[#13251f] px-4 py-3 text-sm font-semibold text-[#fbfcfa] transition hover:bg-[#213a32]" href="#projects">
+                    <i class="bi bi-folder2-open"></i>
+                    Selected projects
+                </a>
+                <a class="inline-flex items-center gap-2 rounded-md border border-[#bacbc4] bg-[#fbfcfa] px-4 py-3 text-sm font-semibold text-[#263a33] transition hover:border-[#8aa39a] hover:bg-[#eef4f0]" href="https://github.com/henrikac" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github"></i>
+                    GitHub
+                </a>
+                <a class="inline-flex items-center gap-2 rounded-md border border-[#bacbc4] bg-[#fbfcfa] px-4 py-3 text-sm font-semibold text-[#263a33] transition hover:border-[#8aa39a] hover:bg-[#eef4f0]" href="https://www.linkedin.com/in/henrikac" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <div class="grid gap-4">
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#eef4f0] p-6 shadow-sm">
+                <div class="flex items-center gap-3">
+                    <span class="flex h-11 w-11 items-center justify-center rounded-md bg-[#d7ecef] text-[#176d72]">
+                        <i class="bi bi-diagram-3 text-xl"></i>
+                    </span>
+                    <div>
+                        <h2 class="text-base font-semibold text-[#13251f]">Platforms and APIs</h2>
+                        <p class="text-sm text-[#5a6963]">Symfony, integrations, dataflows and operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#eef4f0] p-6 shadow-sm">
+                <div class="flex items-center gap-3">
+                    <span class="flex h-11 w-11 items-center justify-center rounded-md bg-[#f3ded8] text-[#b94635]">
+                        <i class="bi bi-phone text-xl"></i>
+                    </span>
+                    <div>
+                        <h2 class="text-base font-semibold text-[#13251f]">Apps and user workflows</h2>
+                        <p class="text-sm text-[#5a6963]">iOS, watchOS and software people actually use.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#eef4f0] p-6 shadow-sm">
+                <div class="flex items-center gap-3">
+                    <span class="flex h-11 w-11 items-center justify-center rounded-md bg-[#dcecdf] text-[#3d7a50]">
+                        <i class="bi bi-stars text-xl"></i>
+                    </span>
+                    <div>
+                        <h2 class="text-base font-semibold text-[#13251f]">AI and automation</h2>
+                        <p class="text-sm text-[#5a6963]">Codex, MCP servers and practical assistant workflows.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="projects" class="py-5 mt-10">
-    <h2 class="text-2xl text-white text-center">Projects</h2>
+<section class="bg-[#eef4f0] py-14">
+    <div class="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-3">
+        <div class="border-l-4 border-[#176d72] bg-[#fbfcfa] p-6 shadow-sm">
+            <p class="text-sm font-semibold uppercase tracking-wide text-[#176d72]">Built from scratch</p>
+            <p class="mt-3 text-2xl font-semibold text-[#13251f]">Service2Bike</p>
+            <p class="mt-2 text-sm leading-6 text-[#52615b]">A web portal, REST API and iOS apps developed from the ground up for real operational workflows.</p>
+        </div>
 
-    <div class="mt-5 md:grid md:grid-cols-2 md:gap-4">
-        {% for repository in repositories %}
-            <div class="bg-slate-700 min-h-250 pt-4 px-4 mt-4 mx-4 rounded shadow flex flex-col justify-between">
-                <div>
-                    <h5 class="text-white text-xl pb-2">{{ repository.title }}</h5>
-                    <p class="text-white">
-                        {% if repository.description is not null %}
-                            {{ repository.description }}
-                        {% endif %}
-                    </p>
-                </div>
-                <div class="flex pb-2">
-                    <div class="flex-1 text-center">
-                        {% if repository.language is not null %}
-                            <span class="text-lg text-white">{{ repository.language }}</span>
-                        {% endif %}
-                    </div>
-                    <div class="flex-1 text-center">
-                        <span class="text-lg text-white">
-                            <i class="bi bi-star-fill"></i>
-                            {{ repository.stars }}
-                        </span>
-                    </div>
-                    <div class="flex-1 text-center">
-                        <span class="text-lg text-white">
-                            <a href="{{ repository.url }}" target="_blank">
-                                <i class="bi bi-github text-2xl"></i>
-                                <span class="hidden lg:inline-block">view code</span>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+        <div class="border-l-4 border-[#3d7a50] bg-[#fbfcfa] p-6 shadow-sm">
+            <p class="text-sm font-semibold uppercase tracking-wide text-[#3d7a50]">Stability work</p>
+            <p class="mt-3 text-2xl font-semibold text-[#13251f]">350 to 0-2 crashes</p>
+            <p class="mt-2 text-sm leading-6 text-[#52615b]">A product rebuild where practical engineering made the difference between noisy operations and a stable platform.</p>
+        </div>
+
+        <div class="border-l-4 border-[#d45d4a] bg-[#fbfcfa] p-6 shadow-sm">
+            <p class="text-sm font-semibold uppercase tracking-wide text-[#b94635]">Current direction</p>
+            <p class="mt-3 text-2xl font-semibold text-[#13251f]">AI connected to tools</p>
+            <p class="mt-2 text-sm leading-6 text-[#52615b]">Exploring MCP servers, local knowledge assistants and office automation as useful extensions of everyday workflows.</p>
+        </div>
     </div>
 </section>
 
-<section id="about" class="mb-20">
-    <div class="md:columns-2">
-        <div class="mt-3 md:break-after-column">
-            <h2 class="text-2xl text-white text-center mb-3">About me</h2>
-            <p class="text-white px-4 pt-6">
-            I love to design and build software.
-            I enjoy trying new technologies and I am currently teaching myself Swift/SwiftUI.
+<section id="about" class="bg-[#fbfcfa] py-16 md:py-20">
+    <div class="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+            <p class="text-sm font-semibold uppercase tracking-wide text-[#b94635]">About</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#13251f] md:text-4xl">Practical, curious and value-driven.</h2>
+        </div>
+
+        <div class="space-y-6 text-base leading-8 text-[#52615b]">
+            <p>
+                I work best on projects where software makes something concrete easier, faster or more reliable. That can be an API, an internal platform, an automation, an app or an AI-powered workflow. The technology matters, but the outcome matters more.
+            </p>
+
+            <p>
+                My path into software has been practical from the beginning. I studied computer science at Aalborg University, but left after the third semester because I learn best by building, experimenting and solving real problems. That way of working still shapes how I approach new technology.
+            </p>
+
+            <p>
+                Outside my day-to-day work I build small apps, libraries and experiments. Lately I have been especially interested in ChatGPT, Codex and MCP servers, including a knowledge assistant and an office automation server for controlling lights.
             </p>
         </div>
+    </div>
+</section>
 
-        <div class="mt-10 md:mt-3">
-            <h2 class="text-2xl text-white text-center mb-3">Toolkit</h2>
-            <div class="columns-2 px-4 pt-6">
-                <ul class="text-white text-center">
-                    <li>HTML / CSS</li>
-                    <li>JavaScript</li>
-                    <li>Bootstrap</li>
-                    <li>Tailwind</li>
-                    <li>SwiftUI</li>
-                </ul>
+<section class="border-y border-[#c8d7d0] bg-[#eef4f0] py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-5">
+        <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-wide text-[#b94635]">What I work with</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#13251f] md:text-4xl">A broad toolkit, used pragmatically.</h2>
+        </div>
 
-                <ul class="text-white text-center">
-                    <li>PHP</li>
-                    <li>Symfony</li>
-                    <li>PostgreSQL/MySQL</li>
-                    <li>Git</li>
-                    <li>Swift</li>
-                </ul>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#fbfcfa] p-5 shadow-sm">
+                <i class="bi bi-braces text-2xl text-[#176d72]"></i>
+                <h3 class="mt-4 font-semibold text-[#13251f]">Backend</h3>
+                <p class="mt-2 text-sm leading-6 text-[#52615b]">PHP, Symfony, REST APIs, SQL, MariaDB and integrations.</p>
             </div>
+
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#fbfcfa] p-5 shadow-sm">
+                <i class="bi bi-hdd-network text-2xl text-[#3d7a50]"></i>
+                <h3 class="mt-4 font-semibold text-[#13251f]">Operations</h3>
+                <p class="mt-2 text-sm leading-6 text-[#52615b]">Linux, Docker Compose, Git, CI/CD and keeping systems stable.</p>
+            </div>
+
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#fbfcfa] p-5 shadow-sm">
+                <i class="bi bi-phone text-2xl text-[#d45d4a]"></i>
+                <h3 class="mt-4 font-semibold text-[#13251f]">Apps</h3>
+                <p class="mt-2 text-sm leading-6 text-[#52615b]">Swift, SwiftUI, iOS, watchOS and user-facing workflows.</p>
+            </div>
+
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#fbfcfa] p-5 shadow-sm">
+                <i class="bi bi-cpu text-2xl text-[#6157a8]"></i>
+                <h3 class="mt-4 font-semibold text-[#13251f]">Automation</h3>
+                <p class="mt-2 text-sm leading-6 text-[#52615b]">AI tools, Codex, MCP servers and practical workflow experiments.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="bg-[#fbfcfa] py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-5">
+        <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-3xl">
+                <p class="text-sm font-semibold uppercase tracking-wide text-[#b94635]">Selected projects</p>
+                <h2 class="mt-3 text-3xl font-semibold tracking-tight text-[#13251f] md:text-4xl">Things I have chosen to show.</h2>
+                <p class="mt-4 text-base leading-7 text-[#52615b]">
+                    A mix of shipped personal work and public GitHub projects. Some are practical tools, some are learning projects, and some are small pieces of a larger direction.
+                </p>
+            </div>
+
+            {% if repositories|length > 0 %}
+                <p class="text-sm font-medium text-[#5a6963]">{{ repositories|length }} public {{ repositories|length == 1 ? 'project' : 'projects' }}</p>
+            {% endif %}
+        </div>
+
+        <article class="mt-10 overflow-hidden rounded-lg border border-[#c8d7d0] bg-[#eef4f0] shadow-sm">
+            <div class="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+                <div class="border-b border-[#c8d7d0] bg-[#13251f] p-6 text-[#fbfcfa] lg:border-b-0 lg:border-r">
+                    <p class="text-sm font-semibold uppercase tracking-wide text-[#ffb3a5]">Personal iOS project</p>
+                    <h3 class="mt-4 text-3xl font-semibold tracking-tight">Week40</h3>
+                    <p class="mt-4 text-base leading-7 text-[#c8d7d0]">
+                        A small utility app for iPhone and Apple Watch, built because I kept forgetting the current week number myself.
+                    </p>
+                </div>
+
+                <div class="p-6">
+                    <p class="text-base leading-8 text-[#52615b]">
+                        Week40 offers simple widgets for both iPhone and Apple Watch, making the week number and today's date visible at a glance. I use it almost daily when I need to check which week we are in, either from my watch or directly from the phone without unlocking it.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap items-center gap-3">
+                        <span class="inline-flex items-center gap-2 rounded-full border border-[#c8d7d0] bg-[#fbfcfa] px-3 py-1 text-sm font-medium text-[#263a33]">
+                            <i class="bi bi-phone text-[#d45d4a]"></i>
+                            iOS
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-full border border-[#c8d7d0] bg-[#fbfcfa] px-3 py-1 text-sm font-medium text-[#263a33]">
+                            <i class="bi bi-smartwatch text-[#176d72]"></i>
+                            watchOS
+                        </span>
+                        <span class="inline-flex items-center gap-2 rounded-full border border-[#c8d7d0] bg-[#fbfcfa] px-3 py-1 text-sm font-medium text-[#263a33]">
+                            <i class="bi bi-grid-1x2 text-[#6157a8]"></i>
+                            Widgets
+                        </span>
+                        <a class="ml-0 inline-flex items-center gap-2 rounded-md bg-black px-3 py-1.5 text-white shadow-sm transition hover:bg-[#213a32] sm:ml-auto" href="https://apps.apple.com/dk/app/week40/id6468835714" target="_blank" rel="noopener noreferrer" aria-label="Download Week40 on the App Store">
+                            <i class="bi bi-apple text-xl leading-none"></i>
+                            <span class="flex flex-col leading-none">
+                                <span class="text-[0.55rem] font-medium uppercase tracking-wide">Download on the</span>
+                                <span class="mt-0.5 text-sm font-semibold tracking-tight">App Store</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        {% if repositories|length > 0 %}
+            <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {% for repository in repositories %}
+                    <article class="flex min-h-72 flex-col justify-between rounded-lg border border-[#c8d7d0] bg-[#eef4f0] p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#8aa39a] hover:shadow-md">
+                        <div>
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="text-lg font-semibold leading-7 text-[#13251f]">{{ repository.title }}</h3>
+
+                                <a class="shrink-0 text-[#5a6963] transition hover:text-[#13251f]" href="{{ repository.url }}" target="_blank" rel="noopener noreferrer" aria-label="View {{ repository.title }} on GitHub">
+                                    <i class="bi bi-github text-xl"></i>
+                                </a>
+                            </div>
+
+                            <p class="mt-4 text-sm leading-6 text-[#52615b]">
+                                {% if repository.description is not null and repository.description is not empty %}
+                                    {{ repository.description }}
+                                {% else %}
+                                    A public project from my GitHub profile.
+                                {% endif %}
+                            </p>
+                        </div>
+
+                        <div class="mt-8 flex flex-wrap items-center gap-3 text-sm text-[#5a6963]">
+                            {% if repository.language is not null and repository.language is not empty %}
+                                <span class="inline-flex items-center gap-2 rounded-full border border-[#c8d7d0] bg-[#fbfcfa] px-3 py-1 font-medium text-[#263a33]">
+                                    <span class="h-2 w-2 rounded-full bg-[#176d72]"></span>
+                                    {{ repository.language }}
+                                </span>
+                            {% endif %}
+
+                            <span class="inline-flex items-center gap-2 rounded-full border border-[#c8d7d0] bg-[#fbfcfa] px-3 py-1 font-medium text-[#263a33]">
+                                <i class="bi bi-star-fill text-[#d45d4a]"></i>
+                                {{ repository.stars }}
+                            </span>
+
+                            <a class="ml-auto inline-flex items-center gap-2 font-semibold text-[#263a33] transition hover:text-[#13251f]" href="{{ repository.url }}" target="_blank" rel="noopener noreferrer">
+                                Code
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="mt-10 rounded-lg border border-dashed border-[#8aa39a] bg-[#eef4f0] p-8 text-center">
+                <i class="bi bi-folder2-open text-3xl text-[#5a6963]"></i>
+                <h3 class="mt-4 text-lg font-semibold text-[#13251f]">No public projects selected right now.</h3>
+                <p class="mt-2 text-sm leading-6 text-[#52615b]">This section is ready for any number of selected GitHub projects when they are made public.</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="bg-[#13251f] py-16 text-[#fbfcfa] md:py-20">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <div>
+            <p class="text-sm font-semibold uppercase tracking-wide text-[#ffb3a5]">Current curiosity</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">AI as a practical layer around real systems.</h2>
+        </div>
+
+        <div class="space-y-5 text-base leading-8 text-[#c8d7d0]">
+            <p>
+                I am exploring how AI tools can become useful assistants connected to codebases, notes, devices and daily workflows. MCP is especially interesting because it turns small integrations into something an assistant can actually use.
+            </p>
+            <p>
+                My current experiments include a personal knowledge assistant and a small office automation server. They are small projects, but they point toward the kind of software I enjoy building: useful, connected and grounded in real tasks.
+            </p>
         </div>
     </div>
 </section>

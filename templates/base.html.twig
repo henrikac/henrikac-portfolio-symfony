@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}HenrikAC{% endblock %}</title>
+        <title>{% block title %}Henrik A. Christensen{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
         {% block stylesheets %}
@@ -11,34 +11,29 @@
             <link rel="stylesheet" href="{{ asset('bootstrap-icons/bootstrap-icons.css') }}">
         {% endblock %}
     </head>
-    <body class="bg-slate-900 font-mono">
-        <nav>
-            <div class="container mx-auto px-4 py-6 flex items-center justify-center md:justify-between">
-                <a class="text-3xl text-white font-semibold" href="#top">HenrikAC</a>
-
-                <div class="hidden md:flex md:justify-end md:items-center" id="navbarSupportedContent">
-                    <a class="text-white mr-6 hover:underline link" href="#top">Home</a>
-                    <a class="text-white mr-6 hover:underline link" href="#projects">Projects</a>
-                    <a class="text-white hover:underline link" href="#about">About me</a>
-                </div>
-            </div>
-        </nav>
-
-        <main class="container mx-auto">
+    <body class="bg-[#eef4f0] [font-family:'Avenir_Next',Avenir,ui-sans-serif,system-ui,sans-serif] text-[#13251f] antialiased">
+        <main>
             {% block body %}{% endblock %}
         </main>
 
-        <footer class="py-4">
-            <div class="flex justify-center">
-                <a class="mr-3" href="https://twitter.com/henrikabel" target="_blank">
-                    <i class="bi bi-twitter text-white text-3xl"></i>
-                </a>
+        <footer class="border-t border-[#c8d7d0] bg-[#fbfcfa] py-8">
+            <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-5 text-sm text-[#5a6963] md:flex-row">
+                <p>&copy; {{ 'now' | date('Y') }} Henrik A. Christensen</p>
 
-                <a class="ml-3" href="https://github.com/henrikac" target="_blank">
-                    <i class="bi bi-github text-white text-3xl"></i>
-                </a>
+                <div class="flex items-center gap-4">
+                    <a class="text-[#5a6963] transition hover:text-[#13251f]" href="https://twitter.com/henrikabel" target="_blank" rel="noopener noreferrer" aria-label="Henrik A. Christensen on Twitter">
+                        <i class="bi bi-twitter-x text-xl"></i>
+                    </a>
+
+                    <a class="text-[#5a6963] transition hover:text-[#13251f]" href="https://github.com/henrikac" target="_blank" rel="noopener noreferrer" aria-label="Henrik A. Christensen on GitHub">
+                        <i class="bi bi-github text-xl"></i>
+                    </a>
+
+                    <a class="text-[#5a6963] transition hover:text-[#13251f]" href="https://www.linkedin.com/in/henrikac" target="_blank" rel="noopener noreferrer" aria-label="Henrik A. Christensen on LinkedIn">
+                        <i class="bi bi-linkedin text-xl"></i>
+                    </a>
+                </div>
             </div>
-            <p class="text-white text-center mt-6">&copy; {{ 'now' | date('Y') }} Henrik A. Christensen</p>
         </footer>
 
         {% block javascripts %}

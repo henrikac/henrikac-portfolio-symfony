@@ -1,0 +1,27 @@
+{% if pageCount > 1 %}
+    <nav class="flex flex-wrap items-center justify-center gap-2" aria-label="Pagination">
+        {% if first is defined and current != first %}
+            <a class="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-[#c8d7d0] bg-[#fbfcfa] px-3 text-sm font-semibold text-[#52615b] transition hover:border-[#8aa39a] hover:text-[#13251f]" href="{{ path(route, knp_pagination_query(query, first, options)) }}" aria-label="First page">&lt;&lt;</a>
+        {% endif %}
+
+        {% if previous is defined %}
+            <a class="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-[#c8d7d0] bg-[#fbfcfa] px-3 text-sm font-semibold text-[#52615b] transition hover:border-[#8aa39a] hover:text-[#13251f]" rel="prev" href="{{ path(route, knp_pagination_query(query, previous, options)) }}" aria-label="Previous page">&lt;</a>
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                <a class="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-[#c8d7d0] bg-[#fbfcfa] px-3 text-sm font-semibold text-[#52615b] transition hover:border-[#8aa39a] hover:text-[#13251f]" href="{{ path(route, knp_pagination_query(query, page, options)) }}" aria-label="Go to page {{ page }}">{{ page }}</a>
+            {% else %}
+                <span class="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-[#13251f] bg-[#13251f] px-3 text-sm font-semibold text-[#fbfcfa] shadow-sm" aria-current="page">{{ page }}</span>
+            {% endif %}
+        {% endfor %}
+
+        {% if next is defined %}
+            <a class="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-[#c8d7d0] bg-[#fbfcfa] px-3 text-sm font-semibold text-[#52615b] transition hover:border-[#8aa39a] hover:text-[#13251f]" rel="next" href="{{ path(route, knp_pagination_query(query, next, options)) }}" aria-label="Next page">&gt;</a>
+        {% endif %}
+
+        {% if last is defined and current != last %}
+            <a class="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-[#c8d7d0] bg-[#fbfcfa] px-3 text-sm font-semibold text-[#52615b] transition hover:border-[#8aa39a] hover:text-[#13251f]" href="{{ path(route, knp_pagination_query(query, last, options)) }}" aria-label="Last page">&gt;&gt;</a>
+        {% endif %}
+    </nav>
+{% endif %}

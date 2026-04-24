@@ -1,46 +1,89 @@
 {% extends "admin/base.html.twig" %}
 
+{% block title %}Portfolio | Admin{% endblock %}
+
 {% block javascripts %}
     <script type="module" src="{{ asset('js/toggle-repository-visibility.js') }}"></script>
 {% endblock %}
 
 {% block body %}
-    <div class="px-4">
-        <h2 class="text-white text-3xl mt-10">Repositories</h2>
+    <section>
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-wide text-[#b94635]">Portfolio</p>
+                <h1 class="mt-3 text-3xl font-semibold tracking-tight text-[#13251f]">Repository visibility</h1>
+                <p class="mt-3 max-w-2xl text-sm leading-6 text-[#52615b]">
+                    Choose which GitHub repositories appear on the public homepage.
+                </p>
+            </div>
 
-        <p class="text-end text-white font-semibold my-10">Total: {{ pagination.getTotalItemCount }}</p>
-
-        <table class="min-w-full table-auto text-white mb-10">
-            <thead>
-                <tr class="text-white text-left text-lg border-b">
-                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Title', 'r.title') }}</th>
-                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Language', 'r.language') }}</th>
-                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Stars', 'r.stars') }}</th>
-                    <th scope="col">{{ knp_pagination_sortable(pagination, 'Public', 'r.isPublic') }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for repository in pagination %}
-                    <tr class="text-left border-b">
-                        <th scope="row" class="py-4">{{ repository.title }}</th>
-                        <td class="py-4">{{ repository.language }}</td>
-                        <td class="py-4">{{ repository.stars }}</td>
-                        <td class="py-4"> 
-                            <button
-                                type="button"
-                                class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline {% if repository.isPublic %}bg-red-500 hover:bg-red-700{% else %}bg-green-500 hover:bg-green-700{% endif %} toggle-repository-visibility-btn"
-                                data-repo-id="{{ repository.id }}"
-                            >
-                                {% if repository.isPublic %}Hide{% else %}Show{% endif %}
-                            </button>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
-        <div class="flex justify-center mb-10">
-            {{ knp_pagination_render(pagination) }}
+            <div class="rounded-lg border border-[#c8d7d0] bg-[#fbfcfa] px-4 py-3 text-sm shadow-sm">
+                <span class="font-medium text-[#5a6963]">Total</span>
+                <span class="ml-2 text-lg font-semibold text-[#13251f]">{{ pagination.getTotalItemCount }}</span>
+            </div>
         </div>
-    </div>
+
+        <div class="mt-8 overflow-hidden rounded-xl border border-[#c8d7d0] bg-[#fbfcfa] shadow-sm">
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto">
+                    <thead class="bg-[#eef4f0]">
+                        <tr class="border-b border-[#c8d7d0] text-left text-xs font-semibold uppercase tracking-wide text-[#5a6963]">
+                            <th scope="col" class="px-5 py-4">{{ knp_pagination_sortable(pagination, 'Title', 'r.title') }}</th>
+                            <th scope="col" class="px-5 py-4">{{ knp_pagination_sortable(pagination, 'Language', 'r.language') }}</th>
+                            <th scope="col" class="px-5 py-4">{{ knp_pagination_sortable(pagination, 'Stars', 'r.stars') }}</th>
+                            <th scope="col" class="px-5 py-4">{{ knp_pagination_sortable(pagination, 'Status', 'r.isPublic') }}</th>
+                            <th scope="col" class="px-5 py-4 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[#dbe5e0]">
+                        {% for repository in pagination %}
+                            <tr class="text-sm text-[#263a33] transition hover:bg-[#f6faf8]">
+                                <th scope="row" class="px-5 py-4 text-left font-semibold text-[#13251f]">{{ repository.title }}</th>
+                                <td class="px-5 py-4">
+                                    {% if repository.language is not null and repository.language is not empty %}
+                                        <span class="inline-flex items-center gap-2 rounded-full border border-[#c8d7d0] bg-[#eef4f0] px-3 py-1 text-xs font-medium text-[#263a33]">
+                                            <span class="h-2 w-2 rounded-full bg-[#176d72]"></span>
+                                            {{ repository.language }}
+                                        </span>
+                                    {% else %}
+                                        <span class="text-[#8aa39a]">Unknown</span>
+                                    {% endif %}
+                                </td>
+                                <td class="px-5 py-4">
+                                    <span class="inline-flex items-center gap-1.5 text-[#52615b]">
+                                        <i class="bi bi-star-fill text-[#d45d4a]"></i>
+                                        {{ repository.stars }}
+                                    </span>
+                                </td>
+                                <td class="px-5 py-4">
+                                    <span class="repository-status inline-flex rounded-full px-3 py-1 text-xs font-semibold {% if repository.isPublic %}bg-[#dcecdf] text-[#2f6f3d]{% else %}bg-[#f3ded8] text-[#8d2f22]{% endif %}">
+                                        {% if repository.isPublic %}Public{% else %}Hidden{% endif %}
+                                    </span>
+                                </td>
+                                <td class="px-5 py-4 text-right">
+                                    <button
+                                        type="button"
+                                        class="toggle-repository-visibility-btn inline-flex min-w-20 justify-center rounded-md px-3 py-2 text-sm font-semibold transition {% if repository.isPublic %}is-public bg-[#f3ded8] text-[#8d2f22] hover:bg-[#ecc8c0]{% else %}is-hidden bg-[#dcecdf] text-[#2f6f3d] hover:bg-[#cfe3d2]{% endif %}"
+                                        data-repo-id="{{ repository.id }}"
+                                    >
+                                        {% if repository.isPublic %}Hide{% else %}Show{% endif %}
+                                    </button>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5" class="px-5 py-10 text-center text-sm text-[#52615b]">
+                                    No repositories found.
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-8 flex justify-center">
+            {{ knp_pagination_render(pagination, 'admin/pagination/sliding.html.twig') }}
+        </div>
+    </section>
 {% endblock %}
